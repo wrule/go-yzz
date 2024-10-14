@@ -4,6 +4,7 @@ export default function() {
   const [a, setA] = useState<number>(160);
 
   return <div>
+    <div style={{ fontSize: '32px' }}>血压</div>
     <div>
       <input
         value={a}
