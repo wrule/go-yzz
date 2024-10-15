@@ -46,6 +46,7 @@ export default function() {
     <div>
       <span style={{ fontSize: '32px' }}>{blood_fat(c)}</span>
     </div>
+    <div style={{ color: 'red', fontSize: '32px' }}>这里显示 三高 或 两高 或者 一高 或者 健康</div>
   </div>;
 }
 
