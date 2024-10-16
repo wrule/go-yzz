@@ -5,6 +5,7 @@ export default function() {
   const [a, setA] = useState<number>(160);
   const [b, setB] = useState<number>(7)
   const [c, setC] = useState<number>(1)
+  const colorResult = result(a,b,c)
 
   return <div>
     <div style={{ fontSize: '32px' }}>血压</div>
@@ -46,7 +47,7 @@ export default function() {
     <div>
       <span style={{ fontSize: '32px' }}>{blood_fat(c)}</span>
     </div>
-    <div style={{ color: 'red', fontSize: '32px' }}>这里显示 三高 或 两高 或者 一高 或者 健康</div>
+    <div style={{ color: colorResult == '健康' ? 'green' : 'red', fontSize: '32px' }}> {result(a,b,c)}</div>
   </div>;
 }
 
@@ -82,5 +83,34 @@ function blood_fat(c:number){
   }
   else{
     return '血脂正常'
+  }
+}
+
+function result(a:number,b:number,c:number){
+ 
+  const resultNum1 = compare(a);
+  const resultNum2 = Glucose(b);
+  const resultNum3 = blood_fat(c);
+  let count = 0
+  if (resultNum1 == '血压太高啦'){
+    count = count + 1
+  }
+  if (resultNum2 == '血糖太高啦'){
+    count = count +1
+  }
+  if (resultNum3 == '血脂太高啦'){
+    count = count +1
+  }
+  if (count == 3){
+    return '三高'
+  }
+  if (count == 2){
+    return '二高'
+  }
+  if (count == 1){
+    return '一高'
+  }
+  else{
+    return '健康'
   }
 }
