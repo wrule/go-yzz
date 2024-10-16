@@ -3,8 +3,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Health from './Health'
+import Soldier from './Soldier'
 
 function App() {
+  return <Soldier />;
   return <Health />;
   const [count, setCount] = useState(0)
 
