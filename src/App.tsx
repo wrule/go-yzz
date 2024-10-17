@@ -4,8 +4,10 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Health from './Health'
 import Soldier from './Soldier'
+import MonthDays from './MonthDays'
 
 function App() {
+  return <MonthDays />;
   return <Soldier />;
   return <Health />;
   const [count, setCount] = useState(0)
