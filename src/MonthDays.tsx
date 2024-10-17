@@ -9,19 +9,49 @@
 import { useState } from 'react';
 
 export default function() {
+    const [years , setYears] = useState<number>(2000)
+    const [month , setMonth] = useState<number>(1)
   return  <div>
-    <div>
-      <span style={{ fontSize: '32px' }}>年份</span>
-    </div>
-
-    <div>
-      <span style={{ fontSize: '32px' }}>月份</span>
-    </div>
-
+    <div style={{ fontSize: '32px' }}>请输入年份</div>
+  <div>
+    <input
+      value={years}
+      onChange={(e) => setYears(Number(e.target.value))}
+      type="number"
+      placeholder="请输入年份"
+      style={{ fontSize: '32px' }}
+    />
+  </div>
+  <div style={{ fontSize: '32px' }}>请输入月份</div>
+  <div>
+    <input
+      value={month}
+      onChange={(e) => setMonth(Number(e.target.value))}
+      type="number"
+      placeholder="请输入月份"
+      style={{ fontSize: '32px' }}
+    />
+  </div>
     <div style={{ fontSize: '32px' }}>
       <span>当月有：</span>
-      <span>0</span>
+      <span>{checkYears(years,month)}</span>
       <span>天</span>
     </div>
   </div>;
+}
+// 处理闰年
+function checkYears(years : number,month :number){
+  years % 400 && month == 2 ? '29' : '28';
+  if (month==1 || month== 3|| month==5|| month==7|| month==8|| month==10|| month==12) {
+    return '31';
+  }
+  if (month==4 || month== 6|| month==11) {
+    return '30';
+  }
+  if (years % 4 && years % 100 != 0 && month == 2){
+    return '28';
+  }
+  else{
+    return '29';
+  }
 }
