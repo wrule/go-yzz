@@ -9,8 +9,8 @@
 import { useState } from 'react';
 
 export default function() {
-    const [years , setYears] = useState<number>(2000)
-    const [month , setMonth] = useState<number>(1)
+  const [years , setYears] = useState<number>(2000)
+  const [month , setMonth] = useState<number>(1)
   return  <div>
     <div style={{ fontSize: '32px' }}>请输入年份</div>
   <div>
