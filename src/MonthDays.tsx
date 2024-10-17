@@ -41,7 +41,6 @@ export default function() {
 }
 // 处理闰年
 function checkYears(years : number,month :number){
-  years % 400 && month == 2 ? '29' : '28';
   if (month==1 || month== 3|| month==5|| month==7|| month==8|| month==10|| month==12) {
     return '31';
   }
