@@ -44,13 +44,13 @@ function checkYears(years : number,month :number){
   if (month==1 || month== 3|| month==5|| month==7|| month==8|| month==10|| month==12) {
     return '31';
   }
-  if (month==4 || month== 6|| month==11) {
+  if (month==4 || month== 6|| month== 9|| month==11) {
     return '30';
   }
-  if (years % 4 && years % 100 != 0 && month == 2){
-    return '28';
+  if (years % 4===0 && years % 100 != 0 || years % 400 ===0){
+    return '29';
   }
   else{
-    return '29';
+    return '28';
   }
 }
