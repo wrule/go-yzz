@@ -5,8 +5,10 @@ import './App.css'
 import Health from './Health'
 import Soldier from './Soldier'
 import MonthDays from './MonthDays'
+import Nums from './Nums'
 
 function App() {
+  return <Nums />
   return <MonthDays />;
   return <Soldier />;
   return <Health />;
