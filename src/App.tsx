@@ -6,8 +6,10 @@ import Health from './Health'
 import Soldier from './Soldier'
 import MonthDays from './MonthDays'
 import Nums from './Nums'
+import Nums1 from './Nums1'
 
 function App() {
+  return <Nums1 />;
   return <Nums />
   return <MonthDays />;
   return <Soldier />;
