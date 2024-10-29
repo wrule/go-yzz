@@ -28,7 +28,7 @@ function numbermax(numList : number[]){
       indexmax = i;
     }
   }
-  return [nummax,indexmax,avg = sum / numList.length+1]
+  return [nummax,indexmax,sum / numList.length+1]
 
 }
 function numbermin(numList : number[]){
