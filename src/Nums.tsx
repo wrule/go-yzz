@@ -8,7 +8,25 @@ function Nums() {
 
   return <div style={{ fontSize: '32px' }}>
     <div>{numList.join(',')}</div>
-    <div>最大的数字是 xx</div>
-    <div>最小的数字是 xx</div>
+    <div>最大的数字是{contrast(numList)} </div>
+    <div>最小的数字是 {contrastmin(numList)}</div>
   </div>;
+}
+function contrast(numList: number[]){
+let nummax = -1 ;
+for (let i = 0; i<numList.length;i++){
+  if(numList[i]>nummax){
+    nummax = numList[i];
+  } 
+}
+return nummax;
+}
+function contrastmin(numList: number[]){
+  let nummin = 100;
+  for (let i = 0; i<numList.length;i++){
+    if(numList[i]<nummin){
+      nummin = numList[i];
+    } 
+  }
+  return nummin;
 }
