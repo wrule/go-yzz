@@ -11,8 +11,64 @@ function Nums() {
 
   return <div style={{ fontSize: '32px' }}>
     <div>{numList.join(',')}</div>
-    <div>最大的数字是 xx 位于第 xx 个位置</div>
-    <div>最小的数字是 xx 位于第 xx 个位置</div>
-    <div>挑战：数组的平均数是 xx</div>
+    <div>最大的数字是 {numbermax(numList)[0]} 位于第 {numbermax(numList)[1]} 个位置</div>
+    <div>最小的数字是 {numbermin(numList)[0]}  位于第 {numbermin(numList)[1]}  个位置</div>
+    <div>挑战：数组的平均数是 {numbermax(numList)[2]} </div>
   </div>;
 }
+function numbermax(numList : number[]){
+  let nummax = -1;
+  let indexmax = 0;
+  let sum = 0;
+  let avg = 0;
+  for(let i = 0; i < numList.length; i++){
+    sum = sum + numList[i];
+    if(numList[i]>nummax){
+      nummax = numList[i];
+      indexmax = i;
+    }
+  }
+  return [nummax,indexmax,sum / numList.length+1]
+
+}
+function numbermin(numList : number[]){
+  let nummin = 100;
+  let indexmin = 0;
+  for(let i = 0; i < numList.length; i++){
+    if(numList[i]< nummin){
+      nummin = numList[i];
+      indexmin = i;
+    }
+  }
+  return [nummin,indexmin]
+
+}
+
+// function indexmax(numList : number[]){
+//   let nummax = -1;
+//   let indexmax = 0;
+//   for(let i = 0; i < numList.length; i++){
+//     if(numList[i]>nummax){
+//       nummax = numList[i];
+//       indexmax = i;
+//     }
+//   }
+//   return indexmax
+
+// }
+
+
+// function indexmin(numList : number[]){
+//   let nummin = 100;
+//   let indexmin = 0
+//   for(let i = 0; i < numList.length; i++){
+//     if(numList[i]< nummin){
+//       nummin = numList[i];
+//       indexmin = i;
+//     }
+//   }
+//   return indexmin
+
+// }
+
+
