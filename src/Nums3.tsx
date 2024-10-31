@@ -1,4 +1,5 @@
 // 在一个数组里面寻找三个数，要求三个数的和等于21
+// 挑战，显示排除这三个数字的数组其他的所有数字相加之和
 
 export default
 function Nums() {
@@ -9,5 +10,6 @@ function Nums() {
     <div>{numList.join(',')}</div>
     <div>和为21的三个数字是 xx xx xx</div>
     <div>和为21的三个数字是 xx（位于xx） xx（位于xx）xx（位于xx）</div>
+    <div>其他所有数字的相加和是 xx</div>
   </div>;
 }
