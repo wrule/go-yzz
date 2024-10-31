@@ -20,7 +20,6 @@ function numbermax(numList : number[]){
   let nummax = -1;
   let indexmax = 0;
   let sum = 0;
-  let avg = 0;
   for(let i = 0; i < numList.length; i++){
     sum = sum + numList[i];
     if(numList[i]>nummax){

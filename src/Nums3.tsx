@@ -8,8 +8,44 @@ function Nums() {
 
   return <div style={{ fontSize: '32px' }}>
     <div>{numList.join(',')}</div>
-    <div>和为21的三个数字是 xx xx xx</div>
-    <div>和为21的三个数字是 xx（位于xx） xx（位于xx）xx（位于xx）</div>
-    <div>其他所有数字的相加和是 xx</div>
+    <div>和为21的三个数字是 {threesum(numList)[0]} ,{threesum(numList)[1]} , {threesum(numList)[2]} </div>
+    <div>和为21的三个数字是 {threesum(numList)[0]}（位于{threeindex(numList)[0]}） {threesum(numList)[1]}（位于{threeindex(numList)[1]}）{threesum(numList)[2]}（位于{threeindex(numList)[2]}）</div>
+    <div>其他所有数字的相加和是 {sum(numList)}</div>
   </div>;
+}
+
+function threesum(numList:number[]){
+  for (let i= 0; i < numList.length-2; i++){
+    for(let j= i+1; j <numList.length-1; j++){
+      for (let t = j+1; t < numList.length; t++){
+        if (numList[i]+numList[j]+numList[t]=== 21){
+          return[numList[i],numList[j],numList[t]];
+        }
+      }
+    }
+  }
+  return[];
+}
+
+function threeindex(numList:number[]){
+  for (let i= 0; i < numList.length-2; i++){
+    for(let j= i+1; j <numList.length-1; j++){
+      for (let t = j+1; t < numList.length; t++){
+        if (numList[i]+numList[j]+numList[t]=== 21){
+          return[i,j,t];
+        }
+      }
+    }
+  }
+  return[];
+}
+
+
+function sum(numList:number[]){
+  let sumnumer = 0;
+  for (let i=0;i<numList.length;i++){
+    sumnumer= sumnumer + numList[i];
+
+  }
+  return sumnumer - 21 ;
 }

@@ -8,7 +8,25 @@ function Nums() {
 
   return <div style={{ fontSize: '32px' }}>
     <div>{numList.join(',')}</div>
-    <div>和为7的两个数字是 xx xx</div>
-    <div>和为7的两个数字是 xx（位于xx） xx（位于xx）</div>
+    <div>和为7的两个数字是 {numsum(numList)[0]},{numsum(numList)[1]}</div>
+    <div>和为7的两个数字是 {numsum(numList)[0]}（位于{numindex(numList)[0]}） {numsum(numList)[1]}（位于{numindex(numList)[1]}）</div>
   </div>;
+}
+function numsum(numList: number[]){
+  for (let i=0; i< numList.length-1; i++){
+    for(let j= i+1; j<numList.length; j++ )
+    if (numList[i]+numList[j]===7){
+      return [numList[i], numList[j]]
+    }
+  }
+return []
+}
+function numindex(numList: number[]){
+  for (let i=0; i< numList.length-1; i++){
+    for(let j= i+1; j<numList.length; j++ )
+    if (numList[i]+numList[j]===7){
+      return [i,j]
+    }
+  }
+return []
 }
