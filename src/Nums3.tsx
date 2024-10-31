@@ -5,7 +5,7 @@
 export default
 function Nums() {
   // 这里随机生成一个数组，不要动，不要管
-  const numList = [2, 10.5, 3, 9, 11, 1, 0.111, -10, 7.98, 99];
+  const numList = [2, 7, 10.5, 9, 11, 1, 0.111, -10, 7.98, 99];
 
   return <div style={{ fontSize: '32px' }}>
     <div>{numList.join(',')}</div>

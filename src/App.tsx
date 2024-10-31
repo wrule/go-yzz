@@ -8,8 +8,10 @@ import MonthDays from './MonthDays'
 import Nums from './Nums'
 import Nums1 from './Nums1'
 import Nums2 from './Nums2'
+import Nums3 from './Nums3'
 
 function App() {
+  return <Nums3 />;
   return <Nums2 />;
   return <Nums1 />;
   return <Nums />
