@@ -10,8 +10,10 @@ import Nums1 from './Nums1'
 import Nums2 from './Nums2'
 import Nums3 from './Nums3'
 import Nums4 from './Nums4'
+import Nums5 from './Nums5'
 
 function App() {
+  return <Nums5 />;
   return <Nums4 />;
   return <Nums3 />;
   return <Nums2 />;
